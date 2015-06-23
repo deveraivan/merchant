@@ -4,11 +4,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title><?php echo html::specialchars($title) ?></title>
+    <?=$styles?>
+    <?=$scripts?>   
 </head>
 <body>
-<h1>L33t Str33t</h1>
-<h2>Home</h2>
-<p><?php echo $message.$now ?></p>
-<hr/>
+    <?=View::factory("includes/header")->render(true)?>
+    <?=View::factory("includes/menu")->render(true)?>
+    <?php echo $content ?>
 </body>
 </html>
