@@ -7,6 +7,8 @@ class Public_template_Controller extends Template_Controller {
     {
         parent::__construct();
         $this->template->styles = html::stylesheet('media/css/kube.min.css','screen');
+        $this->template->scripts = html::script('media/js/jquery-1.11.3.js');
+        
     }
     
     public function check_login()

@@ -10,6 +10,8 @@
 <body>
     <?=View::factory("includes/header")->render(true)?>
     <?=View::factory("includes/menu")->render(true)?>
+    <?=View::factory("includes/left-navigation")->render(true)?>
     <?php echo $content ?>
+    <?=View::factory("includes/footer")->render(true)?>
 </body>
 </html>

@@ -8,13 +8,13 @@
  * @copyright  (c) 2007-2008 Kohana Team
  * @license    http://kohanaphp.com/license.html
  */
-class Header_Controller extends Private_Template_Controller {
+class Left_Navigation_Controller extends Private_Template_Controller {
 
 
 	public function index()
 	{
 		// In Kohana, all views are loaded and treated as objects.
-		$this->template->body->content = view::factory('header');
+		$this->template->body->content = view::factory('includes/left-navigation');
 	}
 
 

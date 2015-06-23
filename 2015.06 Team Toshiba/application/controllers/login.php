@@ -1,14 +1,14 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-class Login_Controller extends Template_Controller {
+class Login_Controller extends Public_template_Controller {
 	
 	public function index()
 	{
-		$this->template->title = 'Login';
+	$this->template->title = 'Login';
         $this->template->message = "";
         $this->template->scripts = html::script("media/js/jquery-1.11.3.js");
         $this->template->scripts .= html::script("media/js/login.js");
         $this->template->styles = html::stylesheet("media/css/login.css");
-		$this->template->body = View::factory('login');
+	$this->template->body->content = View::factory('login');
 	}
     
     public function process_login()

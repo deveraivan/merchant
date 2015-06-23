@@ -8,7 +8,8 @@
     <?=$scripts?>   
 </head>
 <body>
-    <?=View::factory("includes/header")->render(true)?>
+     <?=View::factory("includes/header")->render(true)?>
+    <?php echo $content ?>
     <?=View::factory("includes/menu")->render(true)?>
 </body>
 </html>

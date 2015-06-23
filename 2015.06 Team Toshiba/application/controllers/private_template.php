@@ -16,7 +16,7 @@ function __construct(){
 	//$this->template->scripts = script();
     $this->template->styles = html::stylesheet('media/css/kube.min.css','screen');
     $this->template->scripts = html::scripts('media/js/jquery-1.11.3.js');
-	$this->template->body = view::factory('private_view_template');
+    $this->template->body = view::factory('private_view_template');
 	
 }
 

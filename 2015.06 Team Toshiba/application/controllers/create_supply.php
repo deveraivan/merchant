@@ -1,13 +1,13 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-class Create_supply_Controller extends Privatetemplate_Controller {
+class Create_supply_Controller extends Private_Template_Controller {
 	
 	public function index()
 	{
-		$this->template->title = 'Create A Supply';
+        $this->template->title = 'Create A Supply';
         $this->template->message = '';
         $this->template->scripts = html::script("media/js/jquery-1.11.3.js");
         $this->template->scripts .= html::script("media/js/create_supply.js");
-		$this->template->body = View::factory('admin/create_supply');
+	$this->template->body->content = View::factory('admin/create_supply');
 	}
     
     public function process_createsupply()

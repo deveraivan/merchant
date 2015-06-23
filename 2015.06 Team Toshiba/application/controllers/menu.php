@@ -14,7 +14,7 @@ class Menu_Controller extends Private_Template_Controller {
 	public function index()
 	{
 		// In Kohana, all views are loaded and treated as objects.
-		$this->template->body->content = view::factory('menu');
+		$this->template->body->content = view::factory('includes/menu');
 	}
 
 
