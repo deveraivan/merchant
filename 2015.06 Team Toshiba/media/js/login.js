@@ -7,8 +7,8 @@ Login =
         
       $.ajax({
         type: 'POST',
-          url: 'http://localhost/MerchantSite/index.php/login/process_login',
-         data: {username: username, password: password},
+          url: 'http://localhost/kohana/index.php/login/process_login',
+          data: {username: username, password: password},
           dataType: 'JSON',
           success: function(data)
           {
