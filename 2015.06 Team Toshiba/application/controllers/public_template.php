@@ -1,11 +1,18 @@
-<?php defined('SYSPATH') OR die('No direct access allowed.');
-class Public_Template_Controller extends Template_Controller {
-
-	// Disable this controller when Kohana is set to production mode.
-	// See http://docs.kohanaphp.com/installation/deployment for more details.
-	const ALLOW_PRODUCTION = FALSE;
-
-	// Set the name of the template to use
-	public $template = 'public_view_content';
-
+<?php defined('SYSPATH') or die('No direct script access.');
+class Public_template_Controller extends Template_Controller {
+	public $template = 'public_view_template';
+    
+   // $this->check_login();
+    public function __construct()
+    {
+        parent::__construct();
+        $this->template->styles = html::stylesheet('media/css/kube.min.css','screen');
+    }
+    
+    public function check_login()
+    {
+        //check if user is logged in.
+        //if user is logged in, continue
+    //else redirect to login page
+    }
 }
