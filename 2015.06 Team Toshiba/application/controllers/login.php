@@ -1,58 +1,43 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-class Login_Controller extends Public_template_Controller {
+class Login_Controller extends Private_Template_Controller {
 	
 	public function index()
 	{
-	$this->template->title = 'Login';
-        $this->template->message = "";
-        $this->template->scripts = html::script("media/js/jquery-1.11.3.js");
-        $this->template->scripts .= html::script("media/js/login.js");
-        $this->template->styles = html::stylesheet("media/css/login.css");
-	$this->template->body->content = View::factory('login');
+        //$this->session->get('id');
+       	$this->template->title = 'Login::Merchant';
+        $this->template->body = view::factory('login');
 	}
     
     public function process_login()
     {   
-        $db = new Database();
-        //$this->auto_render = false;
-        $username = $this->input->post('username');
-        $password = $this->input->post('password');
-        $data = array($user,$password);
-        $post = new Validation($data);
-        
-        $post->add_rules('username', 'required'); 
-        $post->add_rules('password', 'required');
-        
-        //validate input
-        //check values to database
-        //decrypt value from db and compare to password input
-        if ( ! $username OR ! $password )
+    	$this->session = Session::instance();
+      	
+        $username = Kohana::debug($this->input->get('username','default_value'));
+        $user = new Tbl_User_Model();   
+        $get_user = $user->get_user($username);
+       
+        $password = Kohana::debug($this->input->get('password','default_value'));
+        var_dump($username, $password);    
+        if ($get_user->loaded==TRUE)
         {
-            die ('name and password required');
+        	$password = $get_user->password;
+        	if ($password == $password)
+        	{	
+        		$_SESSION['id']		  =$get_user->id;
+        		$_SESSION['username'] =$get_user->username;
+                $_SESSION['password'] =$get_user->password;
+                
+        		url::redirect('admin/dashboard');
+        	}
+        	else
+        	{
+        		echo 'Login Failed!';
+        	} 
+        	if (! $username OR ! $password )
+        	{
+        		echo 'name and password required';
+        	}
         }
-        $result = $db->query('SELECT * FROM tbl_users WHERE username = '.$username);
-        if( empty($result))
-        {
-            die ('user '.$username .' not found.');
-        }
-        $result = current(result);
-        if($result['password'] === $password)
-        {
-            echo 'Login Success!';
-        } 
-        else
-        {
-            echo 'invalid username or password.';
-        }
-    
-        //if valid redirect to dashboard
-        //else
-        //redirect to login page.
-        
-        $user = new User_Model();
-        $user->save();
-        
-        exit(json_encode($post->errors()));
     }
 
 }
