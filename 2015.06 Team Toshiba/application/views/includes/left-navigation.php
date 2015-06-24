@@ -1,4 +1,4 @@
-<div id="menu">
+<div id="left-menu">
     <nav class="navbar navbar-pills">
         <ul>
             <li><!--insert an image of a black face--></li>

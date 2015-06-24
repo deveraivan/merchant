@@ -14,7 +14,8 @@ class Left_Navigation_Controller extends Private_Template_Controller {
 	public function index()
 	{
 		// In Kohana, all views are loaded and treated as objects.
-		$this->template->body->content = view::factory('includes/left-navigation');
+            //$this->template->body->content = 
+            $this->template->body->content = view::factory('includes/left-navigation');
 	}
 
 
