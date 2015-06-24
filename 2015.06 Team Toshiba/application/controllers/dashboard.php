@@ -8,9 +8,4 @@ class Dashboard_Controller extends Private_Template_Controller {
         $this->template->body->content = View::factory('admin/dashboard.php');
 	}
     
-    public function process_login()
-    {
-    
-    }
-    
 }

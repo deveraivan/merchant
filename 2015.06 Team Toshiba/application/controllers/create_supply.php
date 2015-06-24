@@ -5,7 +5,6 @@ class Create_supply_Controller extends Private_Template_Controller {
 	{
         $this->template->title = 'Create A Supply';
         $this->template->message = '';
-        $this->template->scripts = html::script("media/js/jquery-1.11.3.js");
         $this->template->scripts .= html::script("media/js/create_supply.js");
 	$this->template->body->content = View::factory('admin/create_supply');
 	}
@@ -17,7 +16,7 @@ class Create_supply_Controller extends Private_Template_Controller {
         $description = $this->input->post('description');
         $hardware_type = $this->input->post('hardware_type');
         $number_of_supply = $this->input->post('number_of_supply');
-         $date_acquired = $this->input->post('date_acquired');
+        $date_acquired = $this->input->post('date_acquired');
         $price = $this->input->post('price');
         $manufacturer = $this->input->post('manufacturer');
         $status = $this->input->post('status');

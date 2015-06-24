@@ -11,7 +11,13 @@
 class Left_Navigation_Controller extends Private_Template_Controller {
 
 
-	public function index()
+function __construct(){
+	parent::__construct();
+	
+	//$this->template->scripts = script();
+    $this->template->styles = html::stylesheet('media/css/left-menu.css','screen');
+	
+}	public function index()
 	{
 		// In Kohana, all views are loaded and treated as objects.
             //$this->template->body->content = 
