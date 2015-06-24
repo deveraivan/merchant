@@ -1,7 +1,9 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 class Create_supply_Controller extends Private_Template_Controller {
-	
-	public function index()
+
+    private $input;
+
+    public function index()
 	{
         $this->template->title = 'Create A Supply';
         $this->template->message = '';

@@ -8,7 +8,7 @@ Create_supply =
         var number_of_supply = $('number_of_supply').val();
         var price = $('price').val();
         var manufacturer = $('manufacturer').val();
-        var date_acquired = $('number_of_supply').val();
+        var date_acquired = $('date_acquired').val();
         var status = $('status').val();
         
         $.ajax({
@@ -33,7 +33,7 @@ Create_supply =
 
 $(document).ready(function()
     {
-    Createsupply.click_event();
+    Create_supply.click_event();
 })
                              
                     
