@@ -1,5 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-class Create_supply_Controller extends Private_Template_Controller {
+class Create_Request_Controller extends Private_Template_Controller {
 
     private $input;
 
