@@ -24,13 +24,13 @@ Create_request =
                 dataType: 'JSON',
                 success: function(data)
                 {
-                    alert(data);
+                    window.location.href = 'base_url()/request' ;
                 }
         });
     },
     click_event: function()
     {
-        $('#supply-form').on('click',function(e){
+        $('#request-form').on('click',function(e){
             e.preventDefault();
             Create_request.process();
         });

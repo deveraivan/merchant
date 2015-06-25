@@ -1,5 +1,5 @@
 <div id="container">
-    <div id="form">
+    <div id="user-form">
         <legend>User Profile</legend>
           <fieldset>
            <p>First Name:<input type="text" id="firstname" required value="First Name"></p>

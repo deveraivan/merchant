@@ -18,7 +18,7 @@ Create_supply =
                 dataType: 'JSON',
                 success: function(data)
                 {
-                    alert(data);
+                    window.location.href = 'base_url()/supply' ;
                 }
         });
     },

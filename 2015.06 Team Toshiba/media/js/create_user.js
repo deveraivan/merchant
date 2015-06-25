@@ -13,25 +13,31 @@ Create_request =
         var lastname = $('lastname').val();
         var email = $('email').val();
         var address = $('address').val();
-        var gender = $
-        var request_item = $('request_item').val();
+        //var gender = $().val();
+        var town_city = $('town_city').val();
+        var postal_code = $('postal_code').val();
+        //var country = $().val();
+        var comp_address = $('comp_address').val();
+        var username = $('username').val();
+        var password = $('password').val();
         
         $.ajax({
             type: 'POST',
                 url: 'http://localhost/kohana/index.php/create_request/process_createrequest',
-                data: {date_requested: date_requested, date_needed: date_needed,
-                        delivery_address: delivery_address, quantity: quantity, 
-                        request_item: request_item},
+                data: {firstname: firstname, lastname: lastname, email: email, 
+                        address: address, town_city: town_city, 
+                        postal_code: postal_code, comp_address: comp_address, username:username,
+                        password: password},
                 dataType: 'JSON',
                 success: function(data)
                 {
-                    alert(data);
+                    window.location.href = 'base_url()/user' ;
                 }
         });
     },
     click_event: function()
     {
-        $('#supply-form').on('click',function(e){
+        $('#user-form').on('click',function(e){
             e.preventDefault();
             Create_request.process();
         });
