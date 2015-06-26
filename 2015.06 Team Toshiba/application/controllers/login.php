@@ -1,5 +1,5 @@
 <?php defined('SYSPATH') or die('No direct script access.');
-class Login_Controller extends Private_Template_Controller {
+class Login_Controller extends Public_Template_Controller {
 	
 	public function index()
 	{
